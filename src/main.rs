@@ -64,17 +64,17 @@ async fn main() {
 
         //Mass 
         draw_circle(x1, y1, w, RED);
-        let fps = get_fps();
-        let b = fps.to_string();
-        draw_text(b.as_str(), 50.0, 50.0, 20.0, BLACK);
+        let fps = get_fps().to_string();
+        let b = format!("FPS: {}", fps);
+        draw_text(&b, 50.0, 50.0, 20.0, BLACK);
 
-        let angle = theta;
-        let rad = angle.to_string();
-        draw_text(rad.as_str(), 50.0, 70.0, 20.0, BLACK);
+        let angle = theta.to_string();
+        let rad = format!("Angle: {}", angle);
+        draw_text(&rad, 50.0, 70.0, 20.0, BLACK);
 
-        let energy = total_energy;
-        let eng = energy.to_string();
-        draw_text(eng.as_str(), 50.0, 90.0, 20.0, BLACK);
+        let energy = total_energy.to_string();
+        let text = format!("Total Energy: {}", energy);
+        draw_text(&text, 50.0, 90.0, 20.0, BLACK);  
        
         next_frame().await
     }
