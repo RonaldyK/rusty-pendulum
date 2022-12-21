@@ -64,6 +64,8 @@ async fn main() {
 
         //Mass 
         draw_circle(x1, y1, w, RED);
+
+        
         let fps = get_fps().to_string();
         let b = format!("FPS: {}", fps);
         draw_text(&b, 50.0, 50.0, 20.0, BLACK);
